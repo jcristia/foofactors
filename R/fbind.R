@@ -1,10 +1,15 @@
-# http://stat545.com/packages04_foofactors-package-01.html
-
-#a <- factor(c("character", "hits", "your", "eyeballs"))
-#b <- factor(c("but", "integer", "where it", "counts"))
-#c(a, b)
-#it returns integers.  So we want to create a functon that creates a factor from the concatenation of characters
-
+#' Bind two factors
+#'
+#' Create a new factor from two existing factors, where the new factor's levels
+#' are the union of the levels of the input factors.
+#'
+#' @param a factor
+#' @param b factor
+#'
+#' @return factor
+#' @export
+#' @examples
+#'#' fbind(iris$Species[c(1, 51, 101)], PlantGrowth$group[c(1, 11, 21)])
 fbind <- function(a, b) {
   factor(c(as.character(a), as.character(b)))
 }
